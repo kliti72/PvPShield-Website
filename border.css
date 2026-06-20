@@ -73,7 +73,7 @@
    ═══════════════════════════════════════════════════════ */
 .rb {
   position: relative;
-  padding: 1rem 0.5rem;
+  padding: 1rem 1rem;
 
   /* variabili interne sovrascritte dai temi */
   background-color: var(--rb-bg);

@@ -13,7 +13,7 @@
     { msg: "Vuoi supportare il server? Passa dalla sezione Donation! 💰", highlight: "donation" },
     { msg: "I Dungeon sono la parte più epica — avventure cooperative con boss enormi.", highlight: "dungeon" },
     { msg: "Nelle Impostazioni puoi personalizzare la tua esperienza.", highlight: "setting" },
-    { msg: "Tutto chiaro! Ora entra nel server e buon divertimento! 🐦 ", highlight: "profile" }
+    { msg: "Effettua il login con il tuo account di gioco, assicurati di avere Hytale aperto ed essere connesso al server play.pvpshield.com 🐦 ", highlight: "profile" }
   ];
 
   let current = 0;

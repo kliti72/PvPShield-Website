@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet">
-    <title>PvPShield - Hytale Server</title>
-    <link rel="stylesheet" type="text/css" href="./border.css">
-    <link rel="stylesheet" type="text/css" href="./page.css">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <title>PvPShield - Hytale Server</title>
+  <link rel="stylesheet" type="text/css" href="./border.css">
+  <link rel="stylesheet" type="text/css" href="./page.css">
+  <link rel="stylesheet" type="text/css" href="./css/profile.css">
+  <link rel="stylesheet" type="text/css" href="./css/profile.css">
+  <link rel="stylesheet" type="text/css" href="./css/battlePass.css">
 
-    <!-- Base SEO -->
-    <meta name="description"
-      content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale. Entra nella community di PvPShield!">
-    <meta name="keywords"
-      content="PvPShield, server Hytale, Hytale italiano, Hytale server, prison hytale, dungeon hytale, pvp hytale, server minecraft italiano, hytale 2025">
-    <meta name="author" content="PvPShield">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#0b210c">
-    <link rel="canonical" href="https://pvpshield.com/">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="manifest" href="./favicon/site.webmanifest">
 
-    <!-- Open Graph (anteprima su Facebook, Discord, Telegram ecc.) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://pvpshield.com/">
-    <meta property="og:title" content="PvPShield - Hytale Server">
-    <meta property="og:description"
-      content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale!">
-    <meta property="og:image" content="https://pvpshield.com/logo_clear.png">
-    <meta property="og:locale" content="it_IT">
-    <meta property="og:site_name" content="PvPShield">
+  <!-- Base SEO -->
+  <meta name="description"
+    content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale. Entra nella community di PvPShield!">
+  <meta name="keywords"
+    content="PvPShield, server Hytale, Hytale italiano, Hytale server, prison hytale, dungeon hytale, pvp hytale, server minecraft italiano, hytale 2025">
+  <meta name="author" content="PvPShield">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b210c">
+  <link rel="canonical" href="https://pvpshield.com/">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
-    <!-- Twitter Card (anteprima su X/Twitter) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PvPShield - Hytale Server">
-    <meta name="twitter:description"
-      content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, ora su Hytale!">
-    <meta name="twitter:image" content="https://pvpshield.com/logo_clear.png">
+  <!-- Open Graph (anteprima su Facebook, Discord, Telegram ecc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pvpshield.com/">
+  <meta property="og:title" content="PvPShield - Hytale Server">
+  <meta property="og:description"
+    content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale!">
+  <meta property="og:image" content="https://pvpshield.com/logo_clear.png">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="PvPShield">
 
-    <!-- Dati strutturati JSON-LD (sitelinks su Google) -->
-    <script type="application/ld+json">
+  <!-- Twitter Card (anteprima su X/Twitter) -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PvPShield - Hytale Server">
+  <meta name="twitter:description"
+    content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, ora su Hytale!">
+  <meta name="twitter:image" content="https://pvpshield.com/logo_clear.png">
+
+  <!-- Dati strutturati JSON-LD (sitelinks su Google) -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
@@ -94,15 +97,15 @@
     }
     </script>
 
-  </head>
-  <style>
-
+</head>
+<style>
   /* Global Css */
   * {
     border: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+
   }
-  
+
   body {
     background-color: #0b210c;
     background-size: cover;
@@ -112,9 +115,15 @@
 
   /*  */
   .container_page {
-        /* //TODO Bordi mettalici RPG */
+    /* //TODO Bordi mettalici RPG */
     width: 60%;
     margin: auto;
+  }
+
+  .settin_separator {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .header_container {
@@ -127,6 +136,7 @@
   .header_item_container {
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color: rgb(0, 0, 0);
     margin: 0.07em;
   }
@@ -157,13 +167,12 @@
   }
 
   .active {
-     color: rgb(241, 225, 10);
+    color: rgb(241, 225, 10);
   }
 
   /* Page Container Css */
   .page_container {
     background-size: 790px;
-    height: 510px;
     padding: 0.5em;
     overflow: hidden;
     background-color: rgb(2, 0, 26);
@@ -179,7 +188,7 @@
 
 
   .verse {
-    color:  rgb(2, 0, 26);
+    color: rgb(2, 0, 26);
     display: block;
     text-align: right;
     margin-right: 2em;
@@ -197,10 +206,12 @@
   .gif_piccion {
     animation: piccioneCorre 10s infinite;
   }
+
   @keyframes piccioneCorre {
     0% {
       margin-right: 0%;
     }
+
     100% {
       margin-right: 100%;
     }
@@ -216,8 +227,8 @@
   }
 
   .left_section {
-      margin: auto;
-      color: white;
+    margin: auto;
+    color: white;
   }
 
   .right_section {
@@ -228,236 +239,579 @@
   }
 
   #starBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;   /* non blocca i click */
-  z-index: 1;             /* sotto tutto */
-}
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    /* non blocca i click */
+    z-index: 1;
+    /* sotto tutto */
+  }
 
-#starBackground {
-  z-index: -10;
-}
-
-
-/* ── Mobile-first additions ── */
-
-/* Default (mobile) */
-.container_page {
-  width: 95%;
-}
-
-.top_header_section {
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-
-.header_container {
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.header_item_container {
-  flex: 1 1 calc(33% - 0.5rem);
-  min-width: 90px;
-  justify-content: center;
-}
-
-.header_item_img {
-  width: 30px;
-  height: 30px;
-}
+  #starBackground {
+    z-index: -10;
+  }
 
 
+  /* ── Mobile-first additions ── */
 
-.page_container {
-  height: auto;
-  min-height: 300px;
-  padding: 1rem;
-}
+  /* Default (mobile) */
+  .container_page {
+    width: 95%;
+  }
 
-.profileBody {
-  flex-direction: column;
-  gap: 1rem;
-}
+  .top_header_section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+  }
 
-.title {
-  width: 160px;
-  height: 160px;
-}
+  .header_container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-/* Tablet (≥ 600px) */
-@media (min-width: 600px) {
-  .container_page { width: 85%; }
-  .top_header_section { flex-direction: row; width: 90%; }
-  .title { width: 220px; height: 220px; }
-  .header_item_container { flex: 0 1 auto; }
-  .page_container { height: auto; }
-}
+  .header_item_container {
+    flex: 1 1 calc(33% - 0.5rem);
+    min-width: 90px;
+    justify-content: center;
+  }
 
-/* Desktop (≥ 960px) — valori originali */
-@media (min-width: 960px) {
-  .container_page { width: 60%; }
-  .top_header_section { width: 80%; }
-  .title { width: 300px; height: 300px; }
-  .header_item_container { flex: unset; }
-  .page_container { height: 510px; }
-  .profileBody { flex-direction: row; }
-  body { background-size: contain;}
-}
+  .header_item_img {
+    width: 30px;
+    height: 30px;
+  }
 
+
+
+  .page_container {
+    height: auto;
+    min-height: 300px;
+  }
+
+  .profileBody {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .title {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Tablet (≥ 600px) */
+  @media (min-width: 600px) {
+    .container_page {
+      width: 85%;
+    }
+
+    .top_header_section {
+      flex-direction: row;
+      width: 90%;
+    }
+
+    .title {
+      width: 220px;
+      height: 220px;
+    }
+
+    .header_item_container {
+      flex: 0 1 auto;
+    }
+
+    .page_container {
+      height: auto;
+    }
+  }
+
+  /* Desktop (≥ 960px) — valori originali */
+  @media (min-width: 960px) {
+    .container_page {
+      width: 60%;
+    }
+
+    .top_header_section {
+      width: 80%;
+    }
+
+    .title {
+      width: 300px;
+      height: 300px;
+    }
+
+    .header_item_container {
+      flex: unset;
+    }
+
+    .page_container {
+      height: 2000px;
+    }
+
+    .profileBody {
+      flex-direction: row;
+    }
+
+    body {
+      background-size: contain;
+    }
+  }
 </style>
-  <body>
 
-    <canvas id="starBackground"></canvas>
-    <!-- Logo & Copy Header escluso -->
+<body class>
 
-    <div class="top_header_section ">
-      <div id="piccione"></div>
+  <div class="top_header_section">
+    <div id="piccione"></div>
 
-      <div class="left_section">
-        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
-          Entra ora
-        </div>
-        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
-          10 Giocatori online.
-        </div>
+    <div class="left_section">
+      <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+        Entra ora
       </div>
-
-      <div class="central_section">
-        <div
-          style="text-align: center; justify-content: center; display: block;">
-          <img class="title" src="./logo_clear.png">
-        </div>
+      <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+        10 Giocatori online.
       </div>
-
-      <div class="left_section">
-        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
-          Usciti su Discord
-        </div>
-        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
-          Telegram @PvPShield
-        </div>
-      </div>
-
     </div>
 
-    <div class="container_page ">
+    <div class="central_section">
+      <div style="text-align: center; justify-content: center; display: block;">
+        <img class="title" src="./logo_clear.png">
+      </div>
+    </div>
 
-      <!-- <div class="gif_piccion" style="text-align: right;">
+    <div class="left_section">
+      <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+        Usciti su Discord
+      </div>
+      <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+        Telegram @PvPShield
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container_page ">
+
+    <!-- <div class="gif_piccion" style="text-align: right;">
         <a class="verse"> PRWHHWWWH! </a>
         <img class="piccione" src="gif_piccione.gif"
           style="width: 100px; height: 100px; text-align: right;">
       </div> -->
 
+    <div class="settin_separator">
+
       <!-- Poi dopo tutto è qua dentro -->
       <div class="header_container  ">
 
-        <div class="header_item_container rb rb--stone rb--all rb--md"
-          id="profile">
-          <img class="header_item_img" src="./icon_profile.png">
+
+        <div class="header_item_container rb rb--stone rb--all rb--md" id="profile">
+          <img class="header_item_img" id="header_item_img" src="./icon_profile.png">
           <div class="header_container_label">
             <a class="header_item_content "> Profile</a>
           </div>
         </div>
 
-        <div class="header_item_container rb rb--stone rb--all rb--md"
-          id="rank">
+        <div class="header_item_container rb rb--stone rb--all rb--md" id="rank">
           <img class="header_item_img" src="./icon_rank.png">
           <div class="header_container_label">
             <a class="header_item_content"> Rank</a>
           </div>
         </div>
 
-        <div class="header_item_container rb rb--stone rb--all rb--md"
-          id="battlePass">
+        <div class="header_item_container rb rb--stone rb--all rb--md" id="battlePass">
           <img class="header_item_img" src="./icon_battle_pass.png">
           <div class="header_container_label">
             <a class="header_item_content">BattlePass</a>
           </div>
         </div>
 
-        <div class="header_item_container rb rb--stone rb--all rb--md"
-          id="donation">
+        <div class="header_item_container rb rb--stone rb--all rb--md" id="donation">
           <img class="header_item_img" src="./icon_donation.png">
           <div class="header_container_label">
             <a class="header_item_content"> Donation </a>
           </div>
         </div>
 
-        <div class="header_item_container rb rb--stone rb--all rb--md"
-          id="dungeon">
+        <div class="header_item_container rb rb--stone rb--all rb--md" id="dungeon">
           <img class="header_item_img" src="./icon_dungeon.png">
           <div class="header_container_label">
             <a class="header_item_content"> Dungeon </a>
           </div>
         </div>
 
-        <div class="header_item_container rb rb--stone rb--all rb--md"
-          id="setting">
-          <img class="header_item_img" src="./icon_setting.png">
-          <div class="header_container_label">
-            <a class="header_item_content"> Setting </a>
-          </div>
-        </div>
+
 
       </div>
 
-      <div class="page_container rb rb--stone rb--full rb--md"
-        style="overflow: hidden;">
-
-        <!-- Profile Html -->
-        <div id="profilePage">
-
-          <div class="profileBody" style="display: flex; flex-direction: row;">
-
-            <div class="presentation">
-              <a> Benvenuto Giocatore, Questo è il portale ufficiale di
-                PvPShield,
-              </a>
-              <a> Conettiti con il tuo giocatore </a>
-            </div>
-
-            <div class="quadro rb--stone rb rb--full rb--md"
-              style="text-align: ce;">
-              <img src="gif_toro.gif" style="width: 50%;">
-            </div>
-
-          </div>
-
-          <!-- Fine Profilo -->
-        </div>
-
-        <!-- Rank Html -->
-        <div id="rankPage">
-          <a class> Benvenuto sulla pagina rank </a>
-        </div>
-
-        <!-- Battle Pass Html -->
-        <div id="battlePassPage">
-          <a class> Battle Pass </a>
-        </div>
-
-        <div id="donationPage">
-          <a class> Page donation </a>
-        </div>
-
-        <div id="dungeonPage">
-          <a class> Page www </a>
-        </div>
-
-        <div id="settingPage">
-          <a class> Page ddd </a>
-        </div>
-
+      <div style="display: flex; align-items: center; gap: 8px;" class=" rb rb--stone rb--all rb--md">
+        <img class="header_item_img" src="./icon_setting.png">
+        <select name="cars" id="cars" class="no-outline rb rb--stone rb--full rb--md">
+          <option value="volvo">Italian</option>
+          <option value="saab">English</option>
+        </select>
       </div>
-      <script src="./script/piccione-tutorial.js"></script>
-      <script src="./script/changePager.js"></script>
-      <script src="./script/cubic.js"></script>
+
     </div>
-  </body>
+
+
+    <div class="page_container rb rb--stone rb--full rb--md" style="overflow: hidden;">
+
+      <!-- Profile Html -->
+      <div id="profilePage">
+
+        <div class="profileBody">
+
+          <div class="presentation">
+
+            <div id="LoginSection">
+
+              <div class="quadro ">
+                <img src="gif_toro.gif" id="gifToro">
+              </div>
+
+              <div class="login_flex">
+                <h3>Benvenuto Giocatore, Questo è il portale ufficiale di <span style="color: green;">PvPShield </span></h3>
+                <input type="text" placeholder="Inserisci il tuo nome del gioco" id="playerName"
+                  class="rb rb--stone rb--full rb--m">
+                <button id="playerLoginButton" class="rb rb--stone rb--full rb--m ">Login</button>
+                <span id="statusLogin" class="">Questo sito web è in fase di sviluppo, <span style="color: red"> Non funziona ma se hai idee scrivimi su discord @elzwinne3966 accetto idee. </span>Assicurati di aver il gioco Hytale aperto sul questo computer, ed essere
+                  conesso al server di gioco play.pvpshield.com</span>
+              </div>
+            </div>
+
+
+            <!-- id Auth chiede registrazione -->
+            <div id="Auth">
+
+              <div id="userProfile">
+
+
+                <div class="profile-wrap">
+                  <div class=" section-label rb rb--stone rb--full rb--md">Profilo</div>
+
+                  <div class="Hero-Wrap">
+                    <!-- HERO -->
+                    <div class="hero">
+
+                      <div class=" hero rb rb--stone rb--full rb--md">
+                        <img id="avatar" src="" alt="Avatar" />
+                      </div>
+
+                      <div class="hero-info">
+                        <div class="hero-name" id="username">username</div>
+                        <div class="hero-uuid" id="uuid">uuid</div>
+                        <div class="rank-name rb rb--stone rb--full rb--md" id="hero-rank">Cooming soon..</div>
+
+                      </div>
+                    </div>
+
+                    <!-- Progressione -->
+                    <div>
+                      <div class="prog-item">
+                        <div class="prog-header">
+                          <span class="prog-label">
+                            <img src="./images/icon/player_level.png" class="row-icon" alt="" />
+                            Livello giocatore
+                          </span>
+                          <span class="prog-value" id="livello-val">Lv. X <span class="prog-total">/ 50</span></span>
+                        </div>
+                        <div class="prog-track">
+                          <div class="prog-fill fill-purple" id="livello-bar" style="width: 0%"></div>
+                        </div>
+                      </div>
+
+                      <div class="prog-item">
+                        <div class="prog-header">
+                          <span class="prog-label">
+                            <img src="./images/icon/mission_completed.png" class="row-icon" alt="" />
+                            Missioni completate
+                          </span>
+                          <span class="prog-value" id="missioni-val">X <span class="prog-total">/ 80</span></span>
+                        </div>
+                        <div class="prog-track">
+                          <div class="prog-fill fill-teal" id="missioni-bar" style="width: 0%"></div>
+                        </div>
+                      </div>
+
+                      <div class="prog-item">
+                        <div class="prog-header">
+                          <span class="prog-label">
+                            <img src="./images/icon/quest_actived.png" class="row-icon" alt="" />
+                            Quest attive
+                          </span>
+                          <span class="prog-value" id="quest-val">X <span class="prog-total">in corso</span></span>
+                        </div>
+                        <div class="prog-track">
+                          <div class="prog-fill fill-amber" id="quest-bar" style="width: 0%"></div>
+                        </div>
+                      </div>
+
+                      <div class="prog-item">
+                        <div class="prog-header">
+                          <span class="prog-label">
+                            <img src="./images/icon/dungeon_completati.png" class="row-icon" alt="" />
+                            Dungeon completati
+                          </span>
+                          <span class="prog-value" id="dungeon-val">X <span class="prog-total">/ 20</span></span>
+                        </div>
+                        <div class="prog-track">
+                          <div class="prog-fill fill-coral" id="dungeon-bar" style="width: 0%"></div>
+                        </div>
+                      </div>
+
+                      <div class="prog-item">
+                        <div class="prog-header">
+                          <span class="prog-label">
+                            <img src="icon_rank.png" class="row-icon" alt="" />
+                            Medaglie sbloccate
+                          </span>
+                          <span class="prog-value" id="medaglie-val">X <span class="prog-total">/ 30</span></span>
+                        </div>
+                        <div class="prog-track">
+                          <div class="prog-fill fill-blue" id="medaglie-bar" style="width: 0%"></div>
+                        </div>
+                      </div>
+                      <!-- Termine progressione con questo ultimo div -->
+                    </div>
+
+                  </div>
+
+
+
+
+                  <!-- IDENTITA -->
+                  <div class=" section-label rb rb--stone rb--full rb--md">Tempo di gioco</div>
+                  <div class="stat-row">
+                    <span class="stat-row-label">
+                      <img src="./images/icon/register_date_icon.png" class="row-icon" alt="" />
+                      Membro dal
+                    </span>
+                    <span class="stat-row-value" id="primo-accesso">Cooming soon..</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-row-label">
+                      <img src="./images/icon/played_time.png" class="row-icon" alt="" />
+                      Ore giocate
+                    </span>
+                    <span class="stat-row-value" id="ore-giocate">Cooming soon..</span>
+                  </div>
+
+
+
+
+                  <!-- PROGRESSIONE -->
+
+                  <div class="section-label rb rb--stone rb--full rb--md">Combattimento</div>
+                  <div class="stat-grid">
+                    <div class="stat-card rb rb--stone rb--full rb--md">
+                      <img src="icon_rank.png" class="card-icon" alt="" />
+                      <div class="stat-card-label">Mob abbattuti</div>
+                      <div class="stat-card-value" id="mob">Cooming soon..</div>
+                    </div>
+                    <div class="stat-card rb rb--stone rb--full rb--md">
+                      <img src="./images/icon/player_killed.png" class="card-icon" alt="" />
+                      <div class="stat-card-label">Giocatori abbattuti</div>
+                      <div class="stat-card-value" id="pvp">Cooming soon..</div>
+                    </div>
+                    <div class="stat-card rb rb--stone rb--full rb--md">
+                      <img src="icon_rank.png" class="card-icon" alt="" />
+                      <div class="stat-card-label">Mob più forte</div>
+                      <div class="stat-card-value stat-card-value--sm" id="mob-forte">Cooming soon..</div>
+                    </div>
+                    <div class="stat-card rb rb--stone rb--full rb--md">
+                      <img src="icon_rank.png" class="card-icon" alt="" />
+                      <div class="stat-card-label">Morti totali</div>
+                      <div class="stat-card-value" id="morti">Cooming soon..</div>
+                    </div>
+                  </div>
+
+                  <!-- VOTI & SOCIAL -->
+                  <div class=" section-label rb rb--stone rb--full rb--md">Voti & Social</div>
+                  <div class="stat-row">
+                    <span class="stat-row-label">
+                      <img src="icon_rank.png" class="row-icon" alt="" />
+                      Voti effettuati
+                    </span>
+                    <span class="stat-row-value" id="voti-eff">Cooming soon..</span>
+                  </div>
+                  <div class="stat-row">
+                    <span class="stat-row-label">
+                      <img src="icon_rank.png" class="row-icon" alt="" />
+                      Voti totali ricevuti
+                    </span>
+                    <span class="stat-row-value" id="voti-tot">Cooming soon..</span>
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Fine profilo giocatore -->
+          </div>
+
+        </div>
+
+        <!-- Fine Profilo -->
+      </div>
+
+      <!-- Rank Html -->
+      <div id="rankPage">
+
+        <!-- ECONOMIA -->
+        <div class=" section-label rb rb--stone rb--full rb--md"> Compra i tuoi Rank, Accumula kit, e ritiralo quando
+          più preferisci.</div>
+        <div class="stat-grid">
+          <div class="stat-card rb rb--stone rb--full rb--md">
+            <img src="./images/icon/monete.png" class="card-icon" alt="" />
+            <div class="stat-card-label">Monete</div>
+            <div class="stat-card-value" id="monete">Cooming soon..</div>
+            <div class="stat-card-sub">in portafoglio</div>
+          </div>
+          <div class="stat-card rb rb--stone rb--full rb--md">
+            <img src="./images/icon/soldi_spesi.png" class="card-icon" alt="" />
+            <div class="stat-card-label">Soldi spesi</div>
+            <div class="stat-card-value" id="soldi-spesi">Cooming soon..</div>
+            <div class="stat-card-sub">nel negozio</div>
+          </div>
+          <div class="stat-card rb rb--stone rb--full rb--md">
+            <img src="./images/icon/crates_opened.png" class="card-icon" alt="" />
+            <div class="stat-card-label">Crates aperte</div>
+            <div class="stat-card-value" id="crates">Cooming soon..</div>
+            <div class="stat-card-sub">casse magiche</div>
+          </div>
+          <div class="stat-card rb rb--stone rb--full rb--md">
+            <img src="./images/icon/refereal_mandati.png" class="card-icon" alt="" />
+            <div class="stat-card-label">Referral</div>
+            <div class="stat-card-value" id="referral">Cooming soon..</div>
+            <div class="stat-card-sub">giocatori invitati</div>
+          </div>
+        </div>
+
+
+        <!-- Rank acquistabili -->
+        <div class="rb rb--stone rb--full rb--md" style="width: fit-content; margin-top: 2em;">
+          <img src="./images/rank/rank.png" style="width: 200px; height: 200px;">
+          <a class="rb--stone rb--full rb--md"> Bloccato </a>
+        </div>
+
+
+      </div>
+
+      <!-- Battle Pass Html -->
+      <div id="battlePassPage">
+
+
+
+        <div class="bp-wrap">
+
+          <!-- HEADER -->
+          <div class="bp-header rb rb--stone rb--full rb--md">
+            <div class="bp-header-info">
+              <div class="bp-season">Stagione 1</div>
+              <div class="bp-title">Battle Pass</div>
+              <div class="bp-expires">Scade tra 24 giorni</div>
+            </div>
+            <div class="bp-level-big">
+              <img src="icon_rank.png" class="bp-icon" alt="" />
+              <span id="bp-level">Lv. 18</span>
+            </div>
+          </div>
+
+          <!-- XP BAR -->
+          <div class="bp-xp-wrap rb rb--stone rb--full rb--md">
+            <div class="bp-xp-header">
+              <span class="bp-xp-label">Esperienza</span>
+              <span class="bp-xp-value" id="bp-xp">3.200 / 5.000 XP</span>
+            </div>
+            <div class="bp-xp-track">
+              <div class="bp-xp-fill" id="bp-xp-bar" style="width: 64%"></div>
+            </div>
+          </div>
+
+          <!-- RICOMPENSE -->
+          <div class="bp-section-label">Ricompense</div>
+
+          <div class="bp-rewards">
+
+            <div class="bp-reward rb rb--stone rb--full rb--md bp-reward--claimed">
+              <div class="bp-reward-level">1</div>
+              <img src="icon_rank.png" class="bp-reward-icon" alt="" />
+              <div class="bp-reward-name">Spada di Pietra</div>
+              <div class="bp-reward-status">Riscattato</div>
+            </div>
+
+            <div class="bp-reward rb rb--stone rb--full rb--md bp-reward--claimed">
+              <div class="bp-reward-level">5</div>
+              <img src="icon_rank.png" class="bp-reward-icon" alt="" />
+              <div class="bp-reward-name">500 Monete</div>
+              <div class="bp-reward-status">Riscattato</div>
+            </div>
+
+            <div class="bp-reward rb rb--stone rb--full rb--md bp-reward--claimed">
+              <div class="bp-reward-level">10</div>
+              <img src="icon_rank.png" class="bp-reward-icon" alt="" />
+              <div class="bp-reward-name">Skin Guerriero</div>
+              <div class="bp-reward-status">Riscattato</div>
+            </div>
+
+            <div class="bp-reward rb rb--stone rb--full rb--md bp-reward--current">
+              <div class="bp-reward-level">20</div>
+              <img src="icon_rank.png" class="bp-reward-icon" alt="" />
+              <div class="bp-reward-name">Crate Magica</div>
+              <div class="bp-reward-status">Lv. 18 / 20</div>
+            </div>
+
+            <div class="bp-reward rb rb--stone rb--full rb--md bp-reward--locked">
+              <div class="bp-reward-level">30</div>
+              <img src="icon_rank.png" class="bp-reward-icon" alt="" />
+              <div class="bp-reward-name">Titolo Leggenda</div>
+              <div class="bp-reward-status">Bloccato</div>
+            </div>
+
+            <div class="bp-reward rb rb--stone rb--full rb--md bp-reward--locked">
+              <div class="bp-reward-level">50</div>
+              <img src="icon_rank.png" class="bp-reward-icon" alt="" />
+              <div class="bp-reward-name">Mount Drago</div>
+              <div class="bp-reward-status">Bloccato</div>
+            </div>
+
+          </div>
+
+          <!-- BOTTONE -->
+          <button class="bp-btn rb rb--stone rb--full rb--md">
+            <img src="icon_rank.png" class="bp-icon-sm" alt="" />
+            Acquista Battle Pass Premium
+          </button>
+
+        </div>
+
+
+      </div>
+
+      <div id="donationPage">
+        <a class> Page donation </a>
+      </div>
+
+      <div id="dungeonPage">
+        <a class> Page www </a>
+      </div>
+<!-- 
+      <div id="settingPage">
+        <a> : </a>
+        <a> Logout: </a>
+      </div> -->
+
+    </div>
+    <script src="./script/piccione-tutorial.js"></script>
+    <script src="./script/changePager.js"></script>
+    <script src="./script/cubic.js"></script>
+    <script type="module" src="./util/util.js"></script>
+    <script type="module" src="./core/login.js"></script>
+  </div>
+</body>
+
 </html>

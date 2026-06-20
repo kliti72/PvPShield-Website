@@ -1,5 +1,5 @@
-let pageButton = ["profile", "rank", "battlePass", "donation", "dungeon", "setting"];
-let pages = ["profilePage", "rankPage", "battlePassPage", "donationPage", "dungeonPage", "settingPage"]
+let pageButton = ["profile", "rank", "battlePass", "donation", "dungeon"];
+let pages = ["profilePage", "rankPage", "battlePassPage", "donationPage", "dungeonPage"]
 
 // Hidden Pages
 hiddenAllPages()
