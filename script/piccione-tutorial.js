@@ -1,7 +1,7 @@
 (() => {
   // ── Solo alla prima visita ──
-//   if (localStorage.getItem("pcc-seen")) return;
-//   localStorage.setItem("pcc-seen", "1");
+  if (localStorage.getItem("pcc-seen")) return;
+  localStorage.setItem("pcc-seen", "1");
 
   // step: { msg, highlight } — highlight è l'id dell'elemento da illuminare (opzionale)
   const steps = [
