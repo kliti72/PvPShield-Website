@@ -1,0 +1,365 @@
+
+/*
+  ╔══════════════════════════════════════════════════════════════╗
+  ║          RUNE BORDERS — Full Component Kit v2               ║
+  ║                                                              ║
+  ║  TEMI:   --stone  --iron  --void                            ║
+  ║                                                              ║
+  ║  ANGOLI (modificatori combinabili):                         ║
+  ║    --all        tutti e 4 tagliati (default)                ║
+  ║    --top        solo i 2 superiori                          ║
+  ║    --bottom     solo i 2 inferiori                          ║
+  ║    --left       solo i 2 sinistri                           ║
+  ║    --right      solo i 2 destri                             ║
+  ║    --tl         solo top-left                               ║
+  ║    --tr         solo top-right                              ║
+  ║    --bl         solo bottom-left                            ║
+  ║    --br         solo bottom-right                           ║
+  ║    --diagonal-a top-right + bottom-left (a croce)           ║
+  ║    --diagonal-b top-left  + bottom-right (a croce)          ║
+  ║    --none       nessun taglio, solo bevel e glow            ║
+  ║                                                              ║
+  ║  DIMENSIONI taglio:                                         ║
+  ║    --sm  (8px)   --md (14px, default)   --lg (22px)        ║
+  ║                                                              ║
+  ║  ESEMPI DI USO:                                             ║
+  ║    <div class="rb rb--stone">                               ║
+  ║    <div class="rb rb--iron rb--tr rb--bl">                  ║
+  ║    <div class="rb rb--void rb--diagonal-a rb--lg">          ║
+  ║    <div class="rb rb--stone rb--none">                      ║
+  ╚══════════════════════════════════════════════════════════════╝
+*/
+
+/* ═══════════════════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════════════════ */
+:root {
+  /* dimensioni taglio angolo */
+  --rb-cut:    14px;   /* default MD */
+
+  /* stone */
+  --rb-s-bg:   #00001d;
+  --rb-s-hi:   #7a6a4a;
+  --rb-s-sh:   #0d0b07; 
+  --rb-s-glow: 184,134,11;  
+  --rb-s-text: #ffffff;
+  --rb-s-sub:  #967a4a;
+
+  /* iron */
+  --rb-i-bg:   #1a2030;
+  --rb-i-hi:   #5a7a9a;
+  --rb-i-sh:   #080c14;
+  --rb-i-glow: 42,106,170;
+  --rb-i-text: #7ab8e0;
+  --rb-i-sub:  #4a7a9a;
+
+  /* void */
+  --rb-v-bg:   #160d22;
+  --rb-v-hi:   #8a4aaa;
+  --rb-v-sh:   #02010a;
+  --rb-v-glow: 155,48,224;
+  --rb-v-text: #c490f0;
+  --rb-v-sub:  #8a50b8;
+}
+
+/* dimensione taglio: override con classi */
+.rb--sm { --rb-cut: 8px;  }
+.rb--md { --rb-cut: 14px; }
+.rb--lg { --rb-cut: 22px; }
+
+
+/* ═══════════════════════════════════════════════════════
+   BASE
+   ═══════════════════════════════════════════════════════ */
+.rb {
+  position: relative;
+  padding: 1rem 0.5rem;
+
+  /* variabili interne sovrascritte dai temi */
+  background-color: var(--rb-bg);
+  color:            var(--rb-text);
+
+  /* clip-path calcolato tramite le variabili corner */
+  clip-path: polygon(
+    var(--rb-tl-x) var(--rb-tl-y),   /* top-left */
+    var(--rb-tr-x) var(--rb-tr-y),   /* top-right */
+    100%           var(--rb-rt-y),   /* right-top  */
+    100%           var(--rb-rb-y),   /* right-bottom */
+    var(--rb-br-x) var(--rb-br-y),   /* bottom-right */
+    var(--rb-bl-x) var(--rb-bl-y),   /* bottom-left */
+    0%             var(--rb-lb-y),   /* left-bottom */
+    0%             var(--rb-lt-y)    /* left-top */
+  );
+
+  box-shadow:       var(--rb-shadow);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+
+}
+
+/* overlay bevel (luce direzionale sopra il bg) */
+.rb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--rb-bevel);
+  clip-path: inherit;
+  z-index: 0;
+  opacity: 0.18;
+  pointer-events: none;
+}
+
+/* filo interno (bordo visibile a 2-3px di inset) */
+.rb::after {
+  content: '';
+  position: absolute;
+  inset: var(--rb-inset, 2px);
+  clip-path: inherit;   /* eredita clip identico */
+  background: transparent;
+  border: 1px solid var(--rb-hi);
+  opacity: var(--rb-wire-opacity, 0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* tutti i figli stanno sopra gli pseudo-elementi */
+.rb > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+
+/* ═══════════════════════════════════════════════════════
+   TEMI
+   ═══════════════════════════════════════════════════════ */
+
+/* — STONE — */
+.rb--stone {
+  --rb-bg:   var(--rb-s-bg);
+  --rb-text: var(--rb-s-text);
+  --rb-hi:   var(--rb-s-hi);
+  --rb-bevel: linear-gradient(135deg, var(--rb-s-hi) 0%, transparent 45%, var(--rb-s-sh) 100%);
+  --rb-shadow:
+    inset  1px  1px 0 var(--rb-s-hi),
+    inset -1px -1px 0 var(--rb-s-sh),
+    inset  3px  3px 8px rgba(0,0,0,.6),
+    0 4px 12px rgba(0,0,0,.75),
+    0 0 24px rgba(var(--rb-s-glow),.10);
+  --rb-shadow-hover:
+    inset  1px  1px 0 var(--rb-s-hi),
+    inset -1px -1px 0 var(--rb-s-sh),
+    inset  3px  3px 8px rgba(0,0,0,.6),
+    0 7px 20px rgba(0,0,0,.85),
+    0 0 34px rgba(var(--rb-s-glow),.22);
+}
+
+/* — IRON — */
+.rb--iron {
+  --rb-bg:   var(--rb-i-bg);
+  --rb-text: var(--rb-i-text);
+  --rb-hi:   var(--rb-i-hi);
+  --rb-inset: 3px;
+  --rb-wire-opacity: 0.4;
+  --rb-bevel: linear-gradient(150deg, rgba(90,122,160,.28) 0%, transparent 40%, rgba(8,12,20,.45) 100%);
+  --rb-shadow:
+    inset  2px  2px 0 var(--rb-i-hi),
+    inset -2px -2px 0 var(--rb-i-sh),
+    inset  4px  4px 14px rgba(0,0,0,.5),
+    inset -4px -4px 14px rgba(0,0,0,.3),
+    0 5px 16px rgba(0,0,0,.85),
+    0 0 30px rgba(var(--rb-i-glow),.14);
+  --rb-shadow-hover:
+    inset  2px  2px 0 var(--rb-i-hi),
+    inset -2px -2px 0 var(--rb-i-sh),
+    inset  4px  4px 14px rgba(0,0,0,.5),
+    inset -4px -4px 14px rgba(0,0,0,.3),
+    0 9px 24px rgba(0,0,0,.92),
+    0 0 42px rgba(var(--rb-i-glow),.30);
+}
+
+/* — VOID — */
+.rb--void {
+  --rb-bg:   var(--rb-v-bg);
+  --rb-text: var(--rb-v-text);
+  --rb-hi:   var(--rb-v-hi);
+  --rb-inset: 3px;
+  --rb-wire-opacity: 0.45;
+  --rb-bevel: radial-gradient(ellipse at 30% 30%, rgba(155,48,224,.18) 0%, transparent 65%);
+  --rb-shadow:
+    inset  2px  2px 0 var(--rb-v-hi),
+    inset -2px -2px 0 var(--rb-v-sh),
+    inset  0 0 22px rgba(100,20,150,.32),
+    0 6px 20px rgba(0,0,0,.92),
+    0 0 36px rgba(var(--rb-v-glow),.20),
+    0 0 64px rgba(var(--rb-v-glow),.08);
+  --rb-shadow-hover:
+    inset  2px  2px 0 #aa5ace,
+    inset -2px -2px 0 var(--rb-v-sh),
+    inset  0 0 30px rgba(120,30,180,.46),
+    0 8px 22px rgba(0,0,0,.95),
+    0 0 48px rgba(var(--rb-v-glow),.36),
+    0 0 86px rgba(var(--rb-v-glow),.14);
+
+  animation: rb-void-pulse 4s ease-in-out infinite;
+}
+
+@keyframes rb-void-pulse {
+  0%,100% { box-shadow: var(--rb-shadow);       }
+  50%      { box-shadow: var(--rb-shadow-hover); }
+}
+.rb--void:hover { animation-play-state: paused; }
+
+
+/* ═══════════════════════════════════════════════════════
+   MODIFICATORI ANGOLI
+   Ogni modificatore sovrascrive solo le variabili
+   dei vertici coinvolti. Si possono combinare.
+   ═══════════════════════════════════════════════════════ */
+
+/*
+   Convenzione variabili clip-path:
+   Polygon con 8 punti (2 per ogni angolo):
+
+      tl-x,tl-y ─────── tr-x,tr-y
+      │                           │
+   lt-y                         rt-y
+      │                           │
+   lb-y                         rb-y
+      │                           │
+      bl-x,bl-y ─────── br-x,br-y
+
+   Per un angolo "dritto": tl-x=0, tl-y=0
+   Per un angolo "tagliato" di N: tl-x=N, tl-y=0  e  lt-y=N
+*/
+
+/* tutti e 4 tagliati */
+.rb--all {
+  --rb-tl-x: var(--rb-cut); --rb-tl-y: 0%;
+  --rb-lt-y: var(--rb-cut);
+  --rb-tr-x: calc(100% - var(--rb-cut)); --rb-tr-y: 0%;
+  --rb-rt-y: var(--rb-cut);
+  --rb-br-x: calc(100% - var(--rb-cut)); --rb-br-y: 100%;
+  --rb-rb-y: calc(100% - var(--rb-cut));
+  --rb-bl-x: var(--rb-cut); --rb-bl-y: 100%;
+  --rb-lb-y: calc(100% - var(--rb-cut));
+}
+
+/* solo i 2 angoli superiori */
+.rb--top {
+  --rb-tl-x: var(--rb-cut); --rb-tl-y: 0%;
+  --rb-lt-y: var(--rb-cut);
+  --rb-tr-x: calc(100% - var(--rb-cut)); --rb-tr-y: 0%;
+  --rb-rt-y: var(--rb-cut);
+}
+
+/* solo i 2 angoli inferiori */
+.rb--bottom {
+  --rb-br-x: calc(100% - var(--rb-cut)); --rb-br-y: 100%;
+  --rb-rb-y: calc(100% - var(--rb-cut));
+  --rb-bl-x: var(--rb-cut); --rb-bl-y: 100%;
+  --rb-lb-y: calc(100% - var(--rb-cut));
+}
+
+/* solo i 2 angoli sinistri */
+.rb--left {
+  --rb-tl-x: var(--rb-cut); --rb-tl-y: 0%;
+  --rb-lt-y: var(--rb-cut);
+  --rb-bl-x: var(--rb-cut); --rb-bl-y: 100%;
+  --rb-lb-y: calc(100% - var(--rb-cut));
+}
+
+/* solo i 2 angoli destri */
+.rb--right {
+  --rb-tr-x: calc(100% - var(--rb-cut)); --rb-tr-y: 0%;
+  --rb-rt-y: var(--rb-cut);
+  --rb-br-x: calc(100% - var(--rb-cut)); --rb-br-y: 100%;
+  --rb-rb-y: calc(100% - var(--rb-cut));
+}
+
+/* singoli angoli */
+.rb--tl {
+  --rb-tl-x: var(--rb-cut); --rb-tl-y: 0%;
+  --rb-lt-y: var(--rb-cut);
+}
+.rb--tr {
+  --rb-tr-x: calc(100% - var(--rb-cut)); --rb-tr-y: 0%;
+  --rb-rt-y: var(--rb-cut);
+}
+.rb--br {
+  --rb-br-x: calc(100% - var(--rb-cut)); --rb-br-y: 100%;
+  --rb-rb-y: calc(100% - var(--rb-cut));
+}
+.rb--bl {
+  --rb-bl-x: var(--rb-cut); --rb-bl-y: 100%;
+  --rb-lb-y: calc(100% - var(--rb-cut));
+}
+
+/* diagonale A: top-right + bottom-left */
+.rb--diagonal-a {
+  --rb-tr-x: calc(100% - var(--rb-cut)); --rb-tr-y: 0%;
+  --rb-rt-y: var(--rb-cut);
+  --rb-bl-x: var(--rb-cut); --rb-bl-y: 100%;
+  --rb-lb-y: calc(100% - var(--rb-cut));
+}
+
+/* diagonale B: top-left + bottom-right */
+.rb--diagonal-b {
+  --rb-tl-x: var(--rb-cut); --rb-tl-y: 0%;
+  --rb-lt-y: var(--rb-cut);
+  --rb-br-x: calc(100% - var(--rb-cut)); --rb-br-y: 100%;
+  --rb-rb-y: calc(100% - var(--rb-cut));
+}
+
+/* nessun taglio: forma quadrata, solo bevel + shadow */
+.rb--none {
+  /* tutte le variabili restano ai default 0%/100% — niente clip */
+}
+
+
+/* ═══════════════════════════════════════════════════════
+   TIPOGRAFIA INTERNA (opzionale ma consigliata)
+   ═══════════════════════════════════════════════════════ */
+.rb .rb-title {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.rb .rb-subtitle {
+  margin: 0 0 0.7rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+  text-transform: uppercase;
+}
+.rb .rb-body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  opacity: 0.8;
+}
+.rb .rb-footer {
+  margin-top: 1rem;
+  border-top: 1px solid currentColor;
+  opacity: 0.25;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* colore subtitle per tema */
+.rb--stone .rb-subtitle { color: var(--rb-s-sub); opacity: 1; }
+.rb--iron  .rb-subtitle { color: var(--rb-i-sub); opacity: 1; }
+.rb--void  .rb-subtitle { color: var(--rb-v-sub); opacity: 1; }
+
+
+/* ═══════════════════════════════════════════════════════
+   ACCESSIBILITÀ
+   ═══════════════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .rb--void { animation: none; }
+  .rb        { transition: none; }
+}

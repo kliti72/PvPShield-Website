@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+    <title>PvPShield - Server Hytale</title>
+    <link rel="stylesheet" type="text/css" href="./border.css">
+    <link rel="stylesheet" type="text/css" href="./page.css">
+
+  </head>
+  <style>
+
+  /* Global Css */
+  * {
+    border: none;
+      font-family: "Roboto", sans-serif;
+  }
+  
+  body {
+    background-color: #0b210c;
+    background-size: cover;
+    background-image: url("./background-wild.png");
+    background-repeat: no-repeat;
+  }
+
+  /*  */
+  .container_page {
+        /* //TODO Bordi mettalici RPG */
+    width: 60%;
+    margin: auto;
+  }
+
+  .header_container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: space-around;
+  }
+
+  .header_item_container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(0, 0, 0);
+    margin: 0.07em;
+  }
+
+  .header_container:hover {
+    /* transform: translateY(-2px); */
+    box-shadow: var(--rb-shadow-hover);
+  }
+
+  .header_item_container:hover .header_item_content {
+    color: rgb(241, 225, 10);
+    cursor: pointer;
+  }
+
+
+  .header_item_img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header_container_label {
+    margin: auto;
+  }
+
+  .header_item_content {
+    color: white;
+    padding: 0.5em;
+  }
+
+  .active {
+     color: rgb(241, 225, 10);
+  }
+
+  /* Page Container Css */
+  .page_container {
+    background-size: 790px;
+    height: 510px;
+    padding: 0.5em;
+    overflow: hidden;
+    background-color: rgb(2, 0, 26);
+    margin: -1em;
+    padding: 2em;
+  }
+
+  .title {
+    width: 300px;
+    height: 300px;
+
+  }
+
+
+  .verse {
+    color:  rgb(2, 0, 26);
+    display: block;
+    text-align: right;
+    margin-right: 2em;
+    visibility: hidden;
+  }
+
+  .gif_piccion:hover .verse {
+    color: rgb(237, 237, 237);
+    display: block;
+    text-align: right;
+    margin-right: 2em;
+    visibility: visible;
+  }
+
+  .gif_piccion {
+    animation: piccioneCorre 10s infinite;
+  }
+  @keyframes piccioneCorre {
+    0% {
+      margin-right: 0%;
+    }
+    100% {
+      margin-right: 100%;
+    }
+  }
+
+  .top_header_section {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    justify-content: space-between;
+  }
+
+  .left_section {
+      margin: auto;
+      color: white;
+  }
+
+  .right_section {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: auto;
+  }
+
+  #starBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;   /* non blocca i click */
+  z-index: 1;             /* sotto tutto */
+}
+
+#starBackground {
+  z-index: -10;
+}
+
+
+/* ── Mobile-first additions ── */
+
+/* Default (mobile) */
+.container_page {
+  width: 95%;
+}
+
+.top_header_section {
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.header_container {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.header_item_container {
+  flex: 1 1 calc(33% - 0.5rem);
+  min-width: 90px;
+  justify-content: center;
+}
+
+.header_item_img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+.page_container {
+  height: auto;
+  min-height: 300px;
+  padding: 1rem;
+}
+
+.profileBody {
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.title {
+  width: 160px;
+  height: 160px;
+}
+
+/* Tablet (≥ 600px) */
+@media (min-width: 600px) {
+  .container_page { width: 85%; }
+  .top_header_section { flex-direction: row; width: 90%; }
+  .title { width: 220px; height: 220px; }
+  .header_item_container { flex: 0 1 auto; }
+  .page_container { height: auto; }
+}
+
+/* Desktop (≥ 960px) — valori originali */
+@media (min-width: 960px) {
+  .container_page { width: 60%; }
+  .top_header_section { width: 80%; }
+  .title { width: 300px; height: 300px; }
+  .header_item_container { flex: unset; }
+  .page_container { height: 510px; }
+  .profileBody { flex-direction: row; }
+  body { background-size: contain;}
+}
+
+</style>
+  <body>
+    
+  <canvas id="starBackground"></canvas>
+    <!-- Logo & Copy Header escluso -->
+
+
+      <div class="top_header_section ">
+    <div id="piccione"></div>
+
+        <div class="left_section">
+          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
+            Entra ora
+          </div>
+          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
+            10 Giocatori online.
+          </div>
+        </div>
+
+        <div class="central_section">
+                <div style="text-align: center; justify-content: center; display: block;">
+        <img class="title" src="./logo_clear.png">
+      </div>
+        </div>
+
+        <div class="left_section">
+          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
+            Usciti su Discord
+          </div>
+          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
+            Telegram @PvPShield
+          </div>
+        </div>
+
+      </div>  
+
+    <div class="container_page ">
+
+      <!-- <div class="gif_piccion" style="text-align: right;">
+        <a class="verse"> PRWHHWWWH! </a>
+        <img class="piccione" src="gif_piccione.gif"
+          style="width: 100px; height: 100px; text-align: right;">
+      </div> -->
+
+      <!-- Poi dopo tutto è qua dentro -->
+      <div class="header_container  ">
+
+        <div class="header_item_container rb rb--stone rb--all rb--md"
+          id="profile">
+          <img class="header_item_img" src="./icon_profile.png">
+          <div class="header_container_label">
+            <a class="header_item_content "> Profile</a>
+          </div>
+        </div>
+
+        <div class="header_item_container rb rb--stone rb--all rb--md"
+          id="rank">
+          <img class="header_item_img" src="./icon_rank.png">
+          <div class="header_container_label">
+            <a class="header_item_content"> Rank</a>
+          </div>
+        </div>
+
+        <div class="header_item_container rb rb--stone rb--all rb--md"
+          id="battlePass">
+          <img class="header_item_img" src="./icon_battle_pass.png">
+          <div class="header_container_label">
+            <a class="header_item_content">BattlePass</a>
+          </div>
+        </div>
+
+        <div class="header_item_container rb rb--stone rb--all rb--md"
+          id="donation">
+          <img class="header_item_img" src="./icon_donation.png">
+          <div class="header_container_label">
+            <a class="header_item_content"> Donation </a>
+          </div>
+        </div>
+
+        <div class="header_item_container rb rb--stone rb--all rb--md"
+          id="dungeon">
+          <img class="header_item_img" src="./icon_dungeon.png">
+          <div class="header_container_label">
+            <a class="header_item_content"> Dungeon </a>
+          </div>
+        </div>
+
+        <div class="header_item_container rb rb--stone rb--all rb--md"
+          id="setting">
+          <img class="header_item_img" src="./icon_setting.png">
+          <div class="header_container_label">
+            <a class="header_item_content"> Setting </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="page_container rb rb--stone rb--full rb--md" style="overflow: hidden;" >
+
+        <!-- Profile Html -->
+        <div id="profilePage" >
+
+          <div class="profileBody" style="display: flex; flex-direction: row;">
+
+              <div class="presentation">
+                <a> Benvenuto Giocatore, Questo è il portale ufficiale di
+                  PvPShield,
+                </a>
+                <a> Conettiti con il tuo giocatore </a>
+              </div>
+
+              <div class="quadro rb--stone rb rb--full rb--md" style="text-align: ce;">
+                  <img src="gif_toro.gif" style="width: 50%;">
+              </div>
+
+
+          </div>
+
+          
+          <!-- Fine Profilo -->
+        </div>
+
+        <!-- Rank Html -->
+        <div id="rankPage">
+          <a class> Benvenuto sulla pagina rank </a>
+        </div>
+
+        <!-- Battle Pass Html -->
+        <div id="battlePassPage">
+          <a class> Battle Pass </a>
+        </div>
+
+        <div id="donationPage">
+          <a class> Page donation </a>
+        </div>
+
+        <div id="dungeonPage">
+          <a class> Page www </a>
+        </div>
+
+        <div id="settingPage">
+          <a class> Page ddd </a>
+        </div>
+
+      </div>
+      <script src="./script/piccione-tutorial.js"></script>
+      <script src="./script/changePager.js"></script>
+      <script src="./script/cubic.js"></script>
+    </div>
+  </body>
+</html>
