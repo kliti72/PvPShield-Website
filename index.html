@@ -8,9 +8,91 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet">
-    <title>PvPShield - Server Hytale</title>
+    <title>PvPShield - Hytale Server</title>
     <link rel="stylesheet" type="text/css" href="./border.css">
     <link rel="stylesheet" type="text/css" href="./page.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+
+    <!-- Base SEO -->
+    <meta name="description"
+      content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale. Entra nella community di PvPShield!">
+    <meta name="keywords"
+      content="PvPShield, server Hytale, Hytale italiano, Hytale server, prison hytale, dungeon hytale, pvp hytale, server minecraft italiano, hytale 2025">
+    <meta name="author" content="PvPShield">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0b210c">
+    <link rel="canonical" href="https://pvpshield.com/">
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+    <!-- Open Graph (anteprima su Facebook, Discord, Telegram ecc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pvpshield.com/">
+    <meta property="og:title" content="PvPShield - Hytale Server">
+    <meta property="og:description"
+      content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale!">
+    <meta property="og:image" content="https://pvpshield.com/logo_clear.png">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:site_name" content="PvPShield">
+
+    <!-- Twitter Card (anteprima su X/Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PvPShield - Hytale Server">
+    <meta name="twitter:description"
+      content="Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, ora su Hytale!">
+    <meta name="twitter:image" content="https://pvpshield.com/logo_clear.png">
+
+    <!-- Dati strutturati JSON-LD (sitelinks su Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PvPShield",
+      "url": "https://pvpshield.com",
+      "description": "Server Hytale con Prison, PvP e Dungeon. Dal 2017 su Minecraft, dopo un lungo periodo di chiusura riapriamo su Hytale.",
+      "inLanguage": "it",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://pvpshield.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "hasPart": [
+        {
+          "@type": "WebPage",
+          "name": "Profilo Giocatore",
+          "url": "https://pvpshield.com/#profile",
+          "description": "Visualizza e gestisci il tuo profilo giocatore su PvPShield."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Rank",
+          "url": "https://pvpshield.com/#rank",
+          "description": "Classifica dei migliori giocatori del server PvPShield."
+        },
+        {
+          "@type": "WebPage",
+          "name": "BattlePass",
+          "url": "https://pvpshield.com/#battlePass",
+          "description": "Battle Pass stagionale con ricompense esclusive per i giocatori di PvPShield."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Donation",
+          "url": "https://pvpshield.com/#donation",
+          "description": "Supporta il server PvPShield e ottieni vantaggi esclusivi."
+        },
+        {
+          "@type": "WebPage",
+          "name": "Dungeon",
+          "url": "https://pvpshield.com/#dungeon",
+          "description": "Esplora i Dungeon cooperativi di PvPShield con boss e ricompense epiche."
+        }
+      ]
+    }
+    </script>
 
   </head>
   <style>
@@ -18,7 +100,7 @@
   /* Global Css */
   * {
     border: none;
-      font-family: "Roboto", sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
   }
   
   body {
@@ -230,39 +312,39 @@
 
 </style>
   <body>
-    
-  <canvas id="starBackground"></canvas>
+
+    <canvas id="starBackground"></canvas>
     <!-- Logo & Copy Header escluso -->
 
+    <div class="top_header_section ">
+      <div id="piccione"></div>
 
-      <div class="top_header_section ">
-    <div id="piccione"></div>
-
-        <div class="left_section">
-          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
-            Entra ora
-          </div>
-          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
-            10 Giocatori online.
-          </div>
+      <div class="left_section">
+        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+          Entra ora
         </div>
-
-        <div class="central_section">
-                <div style="text-align: center; justify-content: center; display: block;">
-        <img class="title" src="./logo_clear.png">
+        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+          10 Giocatori online.
+        </div>
       </div>
-        </div>
 
-        <div class="left_section">
-          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
-            Usciti su Discord
-          </div>
-          <div class="rb rb--stone rb--all rb--md" style="margin: 1em;"> 
-            Telegram @PvPShield
-          </div>
+      <div class="central_section">
+        <div
+          style="text-align: center; justify-content: center; display: block;">
+          <img class="title" src="./logo_clear.png">
         </div>
+      </div>
 
-      </div>  
+      <div class="left_section">
+        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+          Usciti su Discord
+        </div>
+        <div class="rb rb--stone rb--all rb--md" style="margin: 1em;">
+          Telegram @PvPShield
+        </div>
+      </div>
+
+    </div>
 
     <div class="container_page ">
 
@@ -325,28 +407,28 @@
 
       </div>
 
-      <div class="page_container rb rb--stone rb--full rb--md" style="overflow: hidden;" >
+      <div class="page_container rb rb--stone rb--full rb--md"
+        style="overflow: hidden;">
 
         <!-- Profile Html -->
-        <div id="profilePage" >
+        <div id="profilePage">
 
           <div class="profileBody" style="display: flex; flex-direction: row;">
 
-              <div class="presentation">
-                <a> Benvenuto Giocatore, Questo è il portale ufficiale di
-                  PvPShield,
-                </a>
-                <a> Conettiti con il tuo giocatore </a>
-              </div>
+            <div class="presentation">
+              <a> Benvenuto Giocatore, Questo è il portale ufficiale di
+                PvPShield,
+              </a>
+              <a> Conettiti con il tuo giocatore </a>
+            </div>
 
-              <div class="quadro rb--stone rb rb--full rb--md" style="text-align: ce;">
-                  <img src="gif_toro.gif" style="width: 50%;">
-              </div>
-
+            <div class="quadro rb--stone rb rb--full rb--md"
+              style="text-align: ce;">
+              <img src="gif_toro.gif" style="width: 50%;">
+            </div>
 
           </div>
 
-          
           <!-- Fine Profilo -->
         </div>
 
