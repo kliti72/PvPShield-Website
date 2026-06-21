@@ -1,5 +1,7 @@
 # dependencies (bun install)
 node_modules
+/config/database/*
+./config/database/*
 
 # output
 out
