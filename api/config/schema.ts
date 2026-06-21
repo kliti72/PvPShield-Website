@@ -9,6 +9,6 @@ export const commands = sqliteTable('commands', {
 
 export const players = sqliteTable('players', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  name: text('name').notNull(),
-  uuid: text('uuid').notNull(),
+  name: text('name').notNull().unique(),
+  uuid: text('uuid').notNull().unique(),
 })

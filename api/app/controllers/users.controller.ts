@@ -7,12 +7,6 @@ export const playerController = new Elysia({ prefix: '/player' })
     return playerRepository.findAll();
   })
 
-  .get('/:id', ({ params }) => {
-    return playerRepository.findById(Number(params.id))
-  }, {
-    params: t.Object({ id: t.Numeric() }),
-  })
-
   .get('/:uuid', ({ params }) => {
     return playerRepository.findByUUID(params.uuid)
   }, {
