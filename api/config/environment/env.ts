@@ -6,7 +6,7 @@ export const env = {
   IS_DEV: !IS_PROD,
 
   SERVER: {
-    PORT:     3000,
+    PORT:     5252,
     HOSTNAME: IS_PROD ? '0.0.0.0' : '127.0.0.1',
   },
 
